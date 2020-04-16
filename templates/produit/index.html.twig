@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PaysController!{% endblock %}
+
+{% block body %}
+    <h1> Pays <h1>
+    {% if pays is not empty %}
+    {{  dump(pays) }}
+    {% else %}
+        <p> Il n'y a pas de pays </p>
+        {% endif %}
+
+
+        <h2>Ajouter  un pays <h2>
+        {{ form(ajout) }}
+{% endblock %}
+
