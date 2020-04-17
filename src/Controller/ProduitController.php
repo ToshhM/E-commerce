@@ -24,7 +24,7 @@ class ProduitController extends AbstractController
 
          if($form->isSubmitted()){
             //Toutes les brochures on été remplacé par fichier , le get brochure en DrapeauUpload
-            $fichier = $form->get('ProduitUpload')->getData();
+            $fichier = $form->get('photoUpload')->getData();
 
             // this condition is needed because the 'brochure' field is not required
             // so the image file must be processed only when a file is uploaded
@@ -45,7 +45,7 @@ class ProduitController extends AbstractController
 
                 // updates the 'fichiername' property to store the PDF file name
                 // instead of its contents
-                $un_produit->setProduit($newFilename);
+                $un_produit->setPhoto($newFilename);
             }
 
             $em -> persist($un_produit);
